@@ -4,24 +4,23 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import User from "./layout/User.tsx";
-import Child from "./layout/Child.tsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    children:[{
+    children: [{
       path: "child/:childID",
-      element: <Child />
+      element: <div>1</div>
     }]
   },
   {
-    path:'user',
-    element:<User/>
+    path: 'user',
+    element: <div>2</div>
   }
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <RouterProvider router={router} />
+    <RouterProvider router = {router}/>
 )
